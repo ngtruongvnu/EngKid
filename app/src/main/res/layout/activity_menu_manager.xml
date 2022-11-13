@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.engkit.activity.MenuManager">
+
+    // Thanh trên
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_gravity="top">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_gravity="bottom"></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/purple_200"
+            android:orientation="horizontal"
+            android:layout_gravity="top"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/flag"
+                android:layout_width="40dp"
+                android:layout_height="43dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/uk_flag"
+                android:background="@color/purple_200"
+                android:layout_marginRight="69dp"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/diamond"
+                android:layout_width="33dp"
+                android:layout_height="34dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/diamond"
+                android:background="@color/purple_200"
+                android:layout_marginRight="73dp"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/chuabiet"
+                android:layout_width="35dp"
+                android:layout_height="42dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/uk_flag"
+                android:background="@color/purple_200"
+                android:layout_marginRight="69dp"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/heart"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/heart"
+                android:background="@color/purple_200"
+                android:layout_marginRight="27dp"></ImageButton>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_manager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="61dp"
+        android:layout_marginBottom="86dp"
+        android:background="@color/white">
+    </androidx.fragment.app.FragmentContainerView>
+
+
+
+    //Thanh dưới
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_gravity="bottom">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_gravity="top"></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:background="@color/purple_200"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="bottom">
+            <ImageButton
+                android:id="@+id/home_bt"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/house_icon_y"
+                android:background="@color/purple_200"
+                android:layout_marginRight="45dp"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/info_bt"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/avatar_n"
+                android:background="@color/purple_200"
+                android:layout_marginRight="45dp"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/review_bt"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/onbai_icon_n"
+                android:background="@color/purple_200"
+                android:layout_marginRight="45dp"></ImageButton>
+            <ImageButton
+                android:id="@+id/task_bt"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/treasure_icon_n"
+                android:background="@color/purple_200"
+                android:layout_marginRight="45dp"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/rank_bt"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/rank_icon_n"
+                android:background="@color/purple_200"></ImageButton>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>
