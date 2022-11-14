@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Task">
+    tools:context=".fragment.function.Task">
 
     <!-- TODO: Mọi người code fragment của mình ở đây -->
     <TextView

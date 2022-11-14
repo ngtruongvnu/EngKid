@@ -3,15 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.function.Information">
+    tools:context=".fragment.question.lv2.Question62">
 
-    <!-- TODO: Mọi người code fragment của mình ở đây -->
+    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hùng"
+        android:layout_height="wrap_content"
+        android:text="Trường62"
         android:textSize="24dp"
+        android:gravity="center"
         android:textColor="@color/black"
-        android:gravity="center"/>
+        android:layout_marginTop="100dp"/>
 
 </FrameLayout>
