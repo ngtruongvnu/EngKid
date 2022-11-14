@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" default="true">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
-=======
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
@@ -39,5 +37,4 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
->>>>>>> 99b34b8adf51bb5cc0d4a081d69839c11bb7dd0b
 </project>
