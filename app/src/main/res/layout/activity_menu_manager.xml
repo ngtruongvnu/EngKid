@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context="com.example.engkit.activity.MenuManager">
 
-    // Thanh trên
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="61dp"
@@ -64,18 +63,15 @@
         </LinearLayout>
     </FrameLayout>
 
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_manager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="61dp"
         android:layout_marginBottom="86dp"
-        android:background="@color/white">
-    </androidx.fragment.app.FragmentContainerView>
+        android:background="@color/white"></androidx.fragment.app.FragmentContainerView>
 
-
-
-    //Thanh dưới
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="86dp"
