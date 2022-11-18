@@ -16,7 +16,6 @@ local.properties
 caches/
 wrapper/
 wrapper/dists/
-app/build/
 daemon/
 native/
 jdks/

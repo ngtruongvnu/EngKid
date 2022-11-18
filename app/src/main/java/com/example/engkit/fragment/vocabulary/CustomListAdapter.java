@@ -1,5 +1,6 @@
 package com.example.engkit.fragment.vocabulary;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +22,7 @@ public class CustomListAdapter extends BaseAdapter {
     public CustomListAdapter(Context context, List<Vocabulary> listData) {
         this.listData = listData;
         this.context = context;
-        this.layoutInflater = LayoutInflater.from(context);
+//        this.layoutInflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -42,8 +43,10 @@ public class CustomListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
+        layoutInflater  = (LayoutInflater)
+                context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.vocabulary_list_item_layout , parent, false);
+            convertView = layoutInflater.inflate(R.layout.vocabulary_list_item_layout, null);
             holder = new ViewHolder();
             holder.vocabularyName = (TextView) convertView.findViewById(R.id.vocabularyName);
             holder.vocabularyMeaning = (TextView) convertView.findViewById(R.id.vocabularyMeaning);
