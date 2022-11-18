@@ -8,9 +8,10 @@
 
     <TextView
         android:id="@+id/vocabularyName"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:text="Horse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,9 +20,8 @@
 
     <TextView
         android:id="@+id/vocabularyMeaning"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:text="con ngựa"
         app:layout_constraintBaseline_toBaselineOf="@+id/vocabularyName"
         app:layout_constraintStart_toEndOf="@+id/vocabularyName" />

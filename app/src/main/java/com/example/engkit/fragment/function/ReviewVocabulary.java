@@ -7,15 +7,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.engkit.R;
+import com.example.engkit.fragment.vocabulary.CustomListAdapter;
+import com.example.engkit.fragment.vocabulary.Vocabulary;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Review#newInstance} factory method to
+ * Use the {@link ReviewVocabulary#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Review extends Fragment {
+public class ReviewVocabulary extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +32,7 @@ public class Review extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Review() {
+    public ReviewVocabulary() {
         // Required empty public constructor
     }
 
@@ -39,8 +45,8 @@ public class Review extends Fragment {
      * @return A new instance of fragment Review.
      */
     // TODO: Rename and change types and number of parameters
-    public static Review newInstance(String param1, String param2) {
-        Review fragment = new Review();
+    public static ReviewVocabulary newInstance(String param1, String param2) {
+        ReviewVocabulary fragment = new ReviewVocabulary();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +67,21 @@ public class Review extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_review, container, false);
+        View view = inflater.inflate(R.layout.fragment_review, container, false);
+
+        ListView listView = (ListView) view.findViewById(R.id.listVocabulary);
+
+        listView.setAdapter(new CustomListAdapter(view.getContext(), getData()));
+
+        return view;
+    }
+
+    private List<Vocabulary> getData() {
+        List<Vocabulary> listData = new ArrayList<Vocabulary>();
+
+        listData.add(new Vocabulary("horse", "con ngựa"));
+        listData.add(new Vocabulary("announce", "thông báo"));
+
+        return listData;
     }
 }

@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".fragment.function.Information"
     android:orientation="vertical"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp">
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <TextView
         android:layout_width="match_parent"
