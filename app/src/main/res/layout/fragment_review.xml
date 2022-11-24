@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.function.Review">
+    tools:context=".fragment.function.ReviewVocabulary"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <!-- TODO: Mọi người code fragment của mình ở đây -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hùng"
-        android:textSize="24dp"
+        android:layout_height="wrap_content"
+        android:text="TỪ VỰNG ĐÃ HỌC"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:gravity="center"/>
+        android:layout_marginTop="16dp" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_color"
+            android:text="Từ vựng"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_color"
+            android:text="Ý nghĩa"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listVocabulary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+caches/
+wrapper/
+wrapper/dists/
+daemon/
+native/
+jdks/
