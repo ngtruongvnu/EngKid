@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/rankUserImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="48dp"
+        android:maxWidth="48dp"
+        android:adjustViewBounds="true"
+        android:layout_weight="1" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:cardCornerRadius="64dp"
+        >
+
+        <ImageView
+            android:id="@+id/rankItemAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:maxWidth="64dp"
+            android:maxHeight="64dp"
+            android:scaleType="fitCenter" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/fullName"
+        android:layout_width="166dp"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:text="Vũ Văn Tuấn"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/expRank"
+        android:layout_width="100dp"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:text="Text"
+        android:textSize="24sp" />
+
+</LinearLayout>

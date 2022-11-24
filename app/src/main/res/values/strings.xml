@@ -2,4 +2,7 @@
     <string name="app_name">EngKit</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rank">Xếp hạng</string>
+    <string name="listUserRanking">Danh sách điểm người dùng từ cao xuống thấp</string>
+    <string name="appSymbol">app symbol</string>
 </resources>
