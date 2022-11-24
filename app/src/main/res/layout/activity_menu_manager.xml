@@ -56,7 +56,7 @@
                 android:layout_width="36dp"
                 android:layout_height="38dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/review_icon_n"
+                android:src="@drawable/dictionary_n"
                 android:background="@color/purple_200"
                 android:layout_marginRight="45dp"></ImageButton>
             <ImageButton

@@ -22,12 +22,12 @@ public class CustomListAdapter extends BaseAdapter {
     public CustomListAdapter(Context context, List<Vocabulary> listData) {
         this.listData = listData;
         this.context = context;
-//        this.layoutInflater = LayoutInflater.from(context);
+        this.layoutInflater = LayoutInflater.from(context);
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return listData.size();
     }
 
     @Override
@@ -43,8 +43,6 @@ public class CustomListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        layoutInflater  = (LayoutInflater)
-                context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.vocabulary_list_item_layout, null);
             holder = new ViewHolder();

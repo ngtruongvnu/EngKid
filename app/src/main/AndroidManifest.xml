@@ -14,6 +14,9 @@
         android:theme="@style/Theme.EngKit"
         tools:targetApi="31">
         <activity
+            android:name=".activity.EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".activity.Shop"
             android:exported="false" />
         <activity

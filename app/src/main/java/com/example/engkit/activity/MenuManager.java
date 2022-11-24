@@ -75,7 +75,7 @@ public class MenuManager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(reviewButton!=imageButtonOld) {
-                    reviewButton.setImageResource(R.drawable.review_icon_y);
+                    reviewButton.setImageResource(R.drawable.dictionary_y);
                     processingClickButton(imageButtonOld);
                     imageButtonOld = reviewButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager, reviewVocabularyFragment).commit();
@@ -115,7 +115,7 @@ public class MenuManager extends AppCompatActivity {
             imageButtonOld.setImageResource(R.drawable.avatar_icon_n);
         } else if (imageButtonOld==reviewButton) {
             getSupportFragmentManager().beginTransaction().remove(reviewVocabularyFragment).commit();
-            imageButtonOld.setImageResource(R.drawable.review_icon_n);
+            imageButtonOld.setImageResource(R.drawable.dictionary_n);
         } else if (imageButtonOld==taskButton) {
             getSupportFragmentManager().beginTransaction().remove(taskFragment).commit();
             imageButtonOld.setImageResource(R.drawable.task_icon_n);

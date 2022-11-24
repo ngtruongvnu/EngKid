@@ -51,25 +51,9 @@ public class ReviewVocabulary extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-//        if(view == null)
-//        {
-//
-//        }
-//        else
-//        {
-//            ViewGroup parent = (ViewGroup) view.getParent();
-//            parent.removeView(view);
-//        }
-//
-//        ListView listView = (ListView) view.findViewById(R.id.listVocabulary);
-//        listView.setAdapter(new CustomListAdapter(view.getContext(), getData()));
         View view = inflater.inflate(R.layout.fragment_review, container, false);
         ListView listView = (ListView) view.findViewById(R.id.listVocabulary);
-//        String[] list = {"abnc", "djkflsdjlfk", "fdslkfj", "flkdsjf"};
-//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, list);
         listView.setAdapter(new CustomListAdapter(view.getContext(), getData()));
-//listView.setAdapter(arrayAdapter);
         return view;
     }
 
@@ -77,6 +61,11 @@ public class ReviewVocabulary extends Fragment {
         List<Vocabulary> listData = new ArrayList<Vocabulary>();
 
         listData.add(new Vocabulary("horse", "con ngựa"));
+        listData.add(new Vocabulary("horse", "con ngựa"));
+        listData.add(new Vocabulary("horse", "con ngựa"));
+        listData.add(new Vocabulary("horse", "con ngựa"));
+        listData.add(new Vocabulary("announce", "thông báo"));
+        listData.add(new Vocabulary("announce", "thông báo"));
         listData.add(new Vocabulary("announce", "thông báo"));
 
         return listData;

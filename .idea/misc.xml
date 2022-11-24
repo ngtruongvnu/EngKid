@@ -5,13 +5,15 @@
       <map>
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/drawable/gray_color__corner_border.xml" value="0.106" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/drawable/primary_button.xml" value="0.106" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_edit_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_menu_manager.xml" value="0.1" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_edit_profile.xml" value="0.22" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_information.xml" value="0.2" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_question1.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_question62.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_review.xml" value="0.33" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_review.xml" value="0.2" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_task.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/vocabulary_list_item_layout.xml" value="0.1" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/vocabulary_list_item_layout.xml" value="0.33" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/drawable/input_radius.xml" value="0.1655" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/activity_frame_menu.xml" value="0.1597972972972973" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/activity_frame_menu2.xml" value="0.14966216216216216" />
