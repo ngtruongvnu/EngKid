@@ -1,27 +1,28 @@
 package com.example.engkit.fragment.function;
 
-import android.app.LauncherActivity;
-import android.content.Context;
-import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.engkit.R;
 import com.example.engkit.adapter.RankAdapter;
+import com.example.engkit.database.NetworkProvider;
 import com.example.engkit.database.RankUser;
+import com.example.engkit.database.RankUserService;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,6 +43,8 @@ public class Rank extends Fragment {
     private ListView listView;
 
     private List<RankUser> data;
+
+    private RankUserService rankUserService;
 
     public Rank() {
         // Required empty public constructor
@@ -77,16 +80,32 @@ public class Rank extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        data = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
-            data.add(new RankUser("Vu Van Tuan", 70, i, "https://i.imgur.com/bIRGzVO.jpg"));
-        }
         View view = inflater.inflate(R.layout.fragment_rank, container, false);
         listView = view.findViewById(R.id.listUser);
-        RankAdapter adapter = new RankAdapter(view.getContext(), data);
-        listView.setAdapter(adapter);
+
+        data = new ArrayList<>();
+        rankUserService = NetworkProvider.getClient().create(RankUserService.class);
+        Call<RankUser[]> call = rankUserService.getAllUsers();
+        call.enqueue(new Callback<RankUser[]>() {
+            @Override
+            public void onResponse(Call<RankUser[]> call, Response<RankUser[]> response) {
+                RankUser[] res = response.body();
+                for (int i = 0; i < res.length; i++) {
+                    System.out.println("" + res[i].rank + res[i].imageUrl + res[i].fullname + res[i].score);
+                    data.add(res[i]);
+                }
+                RankAdapter adapter = new RankAdapter(view.getContext(), data);
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<RankUser[]> call, Throwable t) {
+                System.out.println("Fail");
+                System.out.println(t.fillInStackTrace());
+                call.cancel();
+            }
+        });
         // Inflate the layout for this fragment
         return view;
     }
-
 }

@@ -37,9 +37,11 @@
 
     </androidx.cardview.widget.CardView>
 
+
     <ListView
         android:id="@+id/listUser"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:translationY="268dp" />
+        android:translationY="268dp"
+        android:layout_marginBottom="260dp"/>
 </FrameLayout>
