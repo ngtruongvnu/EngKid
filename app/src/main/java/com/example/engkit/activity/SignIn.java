@@ -145,7 +145,6 @@ public class SignIn extends AppCompatActivity {
     }
 
     Boolean checkInfomation() {
-
         if (!emailET.getText().toString().equals("") && !passwordET.getText().toString().equals("")
                 && !passwordAgET.getText().toString().equals("") && codeET.getText().toString().equals(message)
                 && !nameET.getText().toString().equals("") && !datePickerTV.getText().toString().equals("")) {
@@ -158,7 +157,7 @@ public class SignIn extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkInfomation() == true) {
+                if (checkInfoSignIn() == true) {
                     Intent intentLogin = new Intent(SignIn.this, Login.class);
                     String emailUser = emailET.getText().toString();
                     String codeUser = codeET.getText().toString();
@@ -262,5 +261,56 @@ public class SignIn extends AppCompatActivity {
         } catch (MessagingException e) {
             e.printStackTrace();
         }
+    }
+
+    Boolean checkInfoSignIn(){
+        String email = emailET.getText().toString();
+        String password = passwordET.getText().toString();
+        String passwordAg = passwordAgET.getText().toString();
+        String code = codeET.getText().toString();
+        String name = nameET.getText().toString();
+        if(email.equals("")){
+            emailTextLayout.setErrorEnabled(true);
+            emailTextLayout.setError("You need to enter an Email");
+            return false;
+        } else if(!email.contains("@")){
+            emailTextLayout.setErrorEnabled(true);
+            emailTextLayout.setError("The syntax of an Email was wrong");
+            return false;
+        }
+        if(code.equals("")) {
+            codeTextLayout.setErrorEnabled(true);
+            codeTextLayout.setError("You need to enter your Code");
+            return false;
+        } else if(!code.equals(message)) {
+            codeTextLayout.setErrorEnabled(true);
+            codeTextLayout.setError("You Code is incorrect");
+            return false;
+        }
+        if(name.equals("")) {
+            nameTextLayout.setErrorEnabled(true);
+            nameTextLayout.setError("You need to enter your name");
+            return false;
+        }
+        if(password.equals("")) {
+            passwordTextLayout.setErrorEnabled(true);
+            passwordTextLayout.setError("You need to enter your password");
+            return false;
+        } else if(password.length()<6) {
+            passwordTextLayout.setErrorEnabled(true);
+            passwordTextLayout.setError("Your password must more than 6 kt");
+            return false;
+        }
+        if(passwordAg.equals("")) {
+            passwordAgTextLayout.setErrorEnabled(true);
+            passwordAgTextLayout.setError("Your password again and password isn't the same");
+            return false;
+        }
+        if(!passwordAg.equals(password)) {
+            passwordAgTextLayout.setErrorEnabled(true);
+            passwordAgTextLayout.setError("Your password again and password isn't the same");
+            return false;
+        }
+        return true;
     }
 }

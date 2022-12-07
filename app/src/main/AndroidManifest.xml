@@ -31,6 +31,9 @@
             android:name=".activity.LessonManager"
             android:exported="false" />
         <activity
+            android:name=".activity.GetAccountBack"
+            android:exported="false" />
+        <activity
             android:name=".activity.Date"
             android:exported="false" />
         <activity

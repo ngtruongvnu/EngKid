@@ -49,7 +49,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/name_input_layout"
+            android:id="@+id/email_gba_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             app:helperTextTextColor="@color/red">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name_input_field"
+                android:id="@+id/email_gba_field"
                 android:layout_width="342dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -75,12 +75,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/getCode_setAc_bt"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="35dp"
             android:background="@drawable/button_getcode"
-            android:text="Get Code"></Button>
+            android:text="Get Code"
+            android:onClick="buttonSendCodeGAB"></Button>
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -123,9 +125,7 @@
             app:boxStrokeWidth="2dp"
             app:boxStrokeWidthFocused="2dp"
             app:helperText="Bắt buộc*"
-            app:helperTextTextColor="@color/red"
-            app:prefixText="+84"
-            app:prefixTextColor="@color/black">
+            app:helperTextTextColor="@color/red">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passw_input_field"
@@ -173,12 +173,13 @@
             android:layout_marginTop="46dp"
             android:background="@drawable/login_button"
             android:text="Change password"
+            android:onClick="changePassWordButton"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/ButtonBack"
         android:layout_width="37dp"
         android:layout_height="30dp"
         android:layout_marginStart="14dp"
@@ -194,6 +195,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
         android:layout_marginBottom="10dp"
         android:text="Tao mat khau moi"
         android:textColor="@color/black"
@@ -204,5 +206,5 @@
         app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintVertical_bias="0.32" />
 </androidx.constraintlayout.widget.ConstraintLayout>
