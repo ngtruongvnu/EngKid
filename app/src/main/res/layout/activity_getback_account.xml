@@ -127,6 +127,7 @@
             app:helperText="Bắt buộc*"
             app:helperTextTextColor="@color/error_color">
 
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passw_input_field"
                 android:layout_width="342dp"

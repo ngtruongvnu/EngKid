@@ -74,21 +74,6 @@ public class Question1 extends Fragment{
 
 
 
-//    public ArrayList<Pair<String, String>> pairWord(InputStream inputStream) throws Exception {
-//        ArrayList<Pair<String,String>> pairArrayList = new ArrayList<>();
-//        inputStream = getResources().openRawResource(R.raw.tappair);
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//        String eachLine;
-//        while ((eachLine = bufferedReader.readLine()) != null){
-//            String[] separate;
-//            separate = eachLine.split(":", 2);
-//            Pair<String,String> pair = new Pair<>(separate[0], separate[1]);
-//            pairArrayList.add(pair);
-//        }
-//        return pairArrayList;
-//    }
-
-
     private HashMap keyAndValue;
 
     public HashMap mapWord() throws Exception {

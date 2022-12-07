@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.engkit">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,7 +16,7 @@
         android:theme="@style/Theme.EngKit"
         tools:targetApi="31">
         <activity
-            android:name=".activity.LessonManager2"
+            android:name=".activity.lessonmanager.LessonManager2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -24,17 +26,29 @@
             android:name=".activity.Shop"
             android:exported="false" />
         <activity
-            android:name=".activity.LessonManager"
+            android:name=".activity.lessonmanager.LessonManager"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".activity.MenuManager"-->
-<!--            android:exported="false"/>-->
+        <activity
+            android:name=".activity.lessonmanager.LessonManager3"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lessonmanager.LessonManager4"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lessonmanager.LessonManager5"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Database"
+            android:exported="false" />
         <activity
             android:name=".activity.GetAccountBack"
-            android:exported="false"/>
-<!--        <activity-->
-<!--            android:name=".activity.Login"-->
-<!--            android:exported="false"/>-->
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignIn"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Login"
+            android:exported="false" />
         <activity
             android:name=".activity.MenuManager"
             android:exported="true">
