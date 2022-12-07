@@ -11,4 +11,5 @@
     <color name="text_color">#3F2F2F</color>
     <color name="error_color">#EC4141</color>
     <color name="gray_color">#C6C6C6</color>
+    <color name="red">#FF0000</color>
 </resources>
