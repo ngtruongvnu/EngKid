@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.engkit">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,13 +14,7 @@
         android:theme="@style/Theme.EngKit"
         tools:targetApi="31">
         <activity
-            android:name=".activity.Database"
-            android:exported="false" />
-        <activity
-            android:name=".activity.SignIn"
-            android:exported="false" />
-        <activity
-            android:name=".activity.MenuManager"
+            android:name=".activity.EditProfile"
             android:exported="false" />
         <activity
             android:name=".activity.Shop"
@@ -31,13 +23,7 @@
             android:name=".activity.LessonManager"
             android:exported="false" />
         <activity
-            android:name=".activity.GetAccountBack"
-            android:exported="false" />
-        <activity
-            android:name=".activity.Date"
-            android:exported="false" />
-        <activity
-            android:name=".activity.Login"
+            android:name=".activity.MenuManager"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,5 +32,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
