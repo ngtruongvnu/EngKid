@@ -32,5 +32,8 @@
             </intent-filter>
         </activity>
     </application>
+<<<<<<< HEAD
 
+=======
+>>>>>>> hoang_dev
 </manifest>
