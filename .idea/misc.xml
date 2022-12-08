@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/drawable/button_getcode.xml" value="0.1795" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/drawable/date_bgr.xml" value="0.1795" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/drawable/login_button.xml" value="0.1795" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/font/roboto.xml" value="0.1" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_database.xml" value="0.11655405405405406" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_date.xml" value="0.11655405405405406" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_home.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_information.xml" value="0.11655405405405406" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_question1.xml" value="0.11655405405405406" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/item_db.xml" value="0.1" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/vocabulary_list_item_layout.xml" value="0.1" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.109" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.109" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/drawable/button_getcode.xml" value="0.1185" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/drawable/date_bgr.xml" value="0.197" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/drawable/input_radius.xml" value="0.1655" />
