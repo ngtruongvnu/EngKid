@@ -10,11 +10,20 @@
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/activity_frame_menu4.xml" value="0.14966216216216216" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/activity_frame_menu5.xml" value="0.14966216216216216" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/activity_frame_menu6.xml" value="0.14966216216216216" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/activity_lesson_manager.xml" value="0.1" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/activity_menu_manager.xml" value="0.15067567567567566" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/details_info.xml" value="0.10885416666666667" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_book.xml" value="0.1597972972972973" />
-        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_home.xml" value="0.1597972972972973" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_information.xml" value="0.1597972972972973" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_question1.xml" value="0.1" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_question2.xml" value="0.1" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_question61.xml" value="0.1" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_question62.xml" value="0.1" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_rank.xml" value="0.1597972972972973" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_review.xml" value="0.1597972972972973" />
+        <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/fragment_task.xml" value="0.1597972972972973" />
         <entry key="..\:/projectAndroid/EngKit/EngKitOffical/EngKid/app/src/main/res/layout/listitems_info.xml" value="0.2" />
       </map>
     </option>
@@ -24,5 +33,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.25833333333333336" />
+      </ProjectState>
+    </option>
   </component>
 </project>
