@@ -1,22 +1,18 @@
 package com.example.engkit.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.engkit.R;
-import com.example.engkit.fragment.Home;
-import com.example.engkit.fragment.Information;
-import com.example.engkit.fragment.Rank;
-import com.example.engkit.fragment.Review;
-import com.example.engkit.fragment.Task;
-
-import java.util.List;
+import com.example.engkit.fragment.function.Home;
+import com.example.engkit.fragment.function.Information;
+import com.example.engkit.fragment.function.Rank;
+import com.example.engkit.fragment.function.Review;
+import com.example.engkit.fragment.function.Task;
 
 public class MenuManager extends AppCompatActivity {
 
@@ -27,7 +23,6 @@ public class MenuManager extends AppCompatActivity {
     private Task taskFragment;
     private Review reviewFragment;
     private Rank rankFragment;
-    private List<Fragment> fragmentList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +64,7 @@ public class MenuManager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(infoButton!=imageButtonOld) {
-                    infoButton.setImageResource(R.drawable.avatar_y);
+                    infoButton.setImageResource(R.drawable.avatar_icon_y);
                     processingClickButton(imageButtonOld);
                     imageButtonOld = infoButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,infoFragment).commit();
@@ -80,7 +75,7 @@ public class MenuManager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(reviewButton!=imageButtonOld) {
-                    reviewButton.setImageResource(R.drawable.onbai_icon_y);
+                    reviewButton.setImageResource(R.drawable.review_icon_y);
                     processingClickButton(imageButtonOld);
                     imageButtonOld = reviewButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,reviewFragment).commit();
@@ -91,7 +86,7 @@ public class MenuManager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(taskButton!=imageButtonOld) {
-                    taskButton.setImageResource(R.drawable.treasure_icon_y);
+                    taskButton.setImageResource(R.drawable.task_icon_y);
                     processingClickButton(imageButtonOld);
                     imageButtonOld = taskButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,taskFragment).commit();
@@ -117,13 +112,13 @@ public class MenuManager extends AppCompatActivity {
             imageButtonOld.setImageResource(R.drawable.house_icon_n);
         } else if (imageButtonOld==infoButton){
             getSupportFragmentManager().beginTransaction().remove(infoFragment).commit();
-            imageButtonOld.setImageResource(R.drawable.avatar_n);
+            imageButtonOld.setImageResource(R.drawable.avatar_icon_n);
         } else if (imageButtonOld==reviewButton) {
             getSupportFragmentManager().beginTransaction().remove(reviewFragment).commit();
-            imageButtonOld.setImageResource(R.drawable.onbai_icon_n);
+            imageButtonOld.setImageResource(R.drawable.review_icon_n);
         } else if (imageButtonOld==taskButton) {
             getSupportFragmentManager().beginTransaction().remove(taskFragment).commit();
-            imageButtonOld.setImageResource(R.drawable.treasure_icon_n);
+            imageButtonOld.setImageResource(R.drawable.task_icon_n);
         } else if (imageButtonOld==rankButton) {
             getSupportFragmentManager().beginTransaction().remove(rankFragment).commit();
             imageButtonOld.setImageResource(R.drawable.rank_icon_n);

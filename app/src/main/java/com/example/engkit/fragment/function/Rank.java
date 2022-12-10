@@ -1,4 +1,4 @@
-package com.example.engkit.fragment;
+package com.example.engkit.fragment.function;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.engkit.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Review#newInstance} factory method to
+ * Use the {@link Rank#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Review extends Fragment {
+public class Rank extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Review extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Review() {
+    public Rank() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class Review extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Review.
+     * @return A new instance of fragment Rank.
      */
     // TODO: Rename and change types and number of parameters
-    public static Review newInstance(String param1, String param2) {
-        Review fragment = new Review();
+    public static Rank newInstance(String param1, String param2) {
+        Rank fragment = new Rank();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class Review extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_review, container, false);
+        return inflater.inflate(R.layout.fragment_rank, container, false);
     }
 }
