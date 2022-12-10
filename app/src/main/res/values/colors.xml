@@ -14,4 +14,7 @@
     <color name="red">#FF0000</color>
     <color name="primary_hover_color">#f5f5f5</color>
     <color name="primary_solid_hover_color">#6ab6e2</color>
+    <color name="blue">#4da6ff</color>
+    <color name="orange">#ff944d</color>
+    <color name="green">#66ff66</color>
 </resources>

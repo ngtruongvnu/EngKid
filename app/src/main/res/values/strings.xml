@@ -7,4 +7,5 @@
     <string name="edit_profile_date_error_message">Ngày sinh không đúng</string>
     <string name="edit_profile_address_error_message">Địa chỉ không đúng</string>
     <string name="edit_profile_email_error_message">Email không đúng</string>
+    <string name="edit_text_require">Không bỏ trống trường này</string>
 </resources>

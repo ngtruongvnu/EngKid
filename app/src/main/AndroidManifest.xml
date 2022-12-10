@@ -13,9 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EngKit"
         tools:targetApi="31">
-        <activity
-            android:name=".activity.EditProfile"
+        <activity android:name=".activity.EditProfile"
             android:exported="false" />
+
+        <activity android:name=".activity.LessonManager2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".activity.Shop"
             android:exported="false" />
@@ -31,5 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 </manifest>

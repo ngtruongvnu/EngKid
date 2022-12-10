@@ -14,7 +14,8 @@
         android:text="HỒ SƠ CỦA BẠN"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -39,6 +40,7 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:text="Nguyễn Văn A"
+        android:fontFamily="@font/roboto"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"/>
 
@@ -51,11 +53,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
             android:text="Đã tham gia vào " />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
             android:text="12/06/2020" />
 
     </LinearLayout>
@@ -74,7 +78,8 @@
                 android:layout_height="wrap_content"
                 android:text="Khóa học:"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"/>
 
             <TextView
                 android:id="@+id/profileLanguage"
@@ -83,7 +88,8 @@
                 android:text="Tiếng Anh"
                 android:paddingStart="16dp"
                 android:textColor="@color/text_color"
-                tools:ignore="RtlSymmetry" />
+                tools:ignore="RtlSymmetry"
+                android:fontFamily="@font/roboto"/>
 
         </TableRow>
 
@@ -97,7 +103,8 @@
                 android:layout_height="wrap_content"
                 android:text="Bài đã học:"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -111,20 +118,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12"
-                    tools:ignore="RtlSymmetry" />
+                    tools:ignore="RtlSymmetry"
+                    android:fontFamily="@font/roboto"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="/"
-                    />
+                    android:fontFamily="@font/roboto" />
 
                 <TextView
                     android:id="@+id/profileTotalLesson"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="45"
-                    tools:ignore="RtlSymmetry" />
+                    tools:ignore="RtlSymmetry"
+                    android:fontFamily="@font/roboto"/>
 
             </LinearLayout>
 
@@ -140,7 +149,8 @@
                 android:layout_height="wrap_content"
                 android:text="Điểm:"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"/>
 
             <TextView
                 android:id="@+id/profileScore"
@@ -149,7 +159,8 @@
                 android:text="500"
                 android:paddingStart="16dp"
                 android:textColor="@color/text_color"
-                tools:ignore="RtlSymmetry" />
+                tools:ignore="RtlSymmetry"
+                android:fontFamily="@font/roboto"/>
 
         </TableRow>
 
@@ -163,7 +174,8 @@
                 android:layout_height="wrap_content"
                 android:text="Ngày sinh:"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -177,12 +189,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12"
-                    tools:ignore="RtlSymmetry" />
+                    tools:ignore="RtlSymmetry"
+                    android:fontFamily="@font/roboto"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="/"
+                    android:fontFamily="@font/roboto"
                     />
 
                 <TextView
@@ -190,12 +204,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="05"
-                    tools:ignore="RtlSymmetry" />
+                    tools:ignore="RtlSymmetry"
+                    android:fontFamily="@font/roboto"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="/"
+                    android:fontFamily="@font/roboto"
                     />
 
                 <TextView
@@ -203,6 +219,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2002"
+                    android:fontFamily="@font/roboto"
                     tools:ignore="RtlSymmetry" />
 
             </LinearLayout>
@@ -218,6 +235,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Địa chỉ:"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -226,6 +244,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hà nội, Việt nam"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="16dp"
                 android:textColor="@color/text_color"
                 tools:ignore="RtlSymmetry" />
@@ -241,6 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email:"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -249,6 +269,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="example@gmail.com"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="16dp"
                 android:textColor="@color/text_color"
                 tools:ignore="RtlSymmetry" />
@@ -262,8 +283,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ĐỔI MẬT KHẨU"
-        android:background="@drawable/primary_button"
-        android:textColor="@color/primary_color"
+        android:fontFamily="@font/roboto"
+        android:background="@drawable/primary_solid_button"
+        android:textColor="@color/white"
         android:layout_marginTop="30dp"/>
 
     <Button
@@ -271,15 +293,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/primary_button"
         android:text="CHỈNH SỬA HỒ SƠ"
-        android:textColor="@color/primary_color" />
+        android:fontFamily="@font/roboto"
+        android:background="@drawable/primary_solid_button"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/logoutBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ĐĂNG XUẤT"
+        android:fontFamily="@font/roboto"
         android:background="@drawable/primary_button"
         android:textColor="@color/primary_color"
         android:layout_marginTop="10dp"/>

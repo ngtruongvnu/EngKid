@@ -1,0 +1,3 @@
+banana:chuối
+apple:táo
+pineapple:dứa

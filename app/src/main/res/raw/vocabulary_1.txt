@@ -1,0 +1,31 @@
+map-Bản đồ
+government-Chính phủ
+way-Đường
+art-Nghệ thuật
+world-Thế giới
+computer-Máy tính
+people-Người
+two-Hai
+family-Gia đình
+history-Lịch sử
+health-Sức khỏe
+system-Hệ thống
+information-Thông tin
+meat-Thịt
+year-Năm
+thanks-Lời cảm ơn
+music-Âm nhạc
+person-Người
+reading-Cách đọc
+method-Phương pháp
+data-Dữ liệu
+food-Thức ăn
+understanding-Hiểu biết
+theory-Lý thuyết
+law-Pháp luật
+bird-Chim
+literature-Văn chương
+problem-Vấn đề
+software-Phần mềm
+control-Điều khiển
+knowledge-Kiến thức

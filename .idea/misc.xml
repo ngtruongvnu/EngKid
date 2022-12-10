@@ -12,14 +12,16 @@
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/font/roboto.xml" value="0.1" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_database.xml" value="0.11655405405405406" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_date.xml" value="0.11655405405405406" />
-        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_edit_profile.xml" value="0.10608108108108108" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_edit_profile.xml" value="0.1" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_getback_account.xml" value="0.18" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_lesson_manager.xml" value="0.1" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/activity_menu_manager.xml" value="0.1" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/email.xml" value="0.17" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_home.xml" value="0.13243243243243244" />
-        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_information.xml" value="0.25" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_information.xml" value="0.16" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_question1.xml" value="0.11655405405405406" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_question2.xml" value="0.1222972972972973" />
+        <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_question61.xml" value="0.1" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/fragment_review.xml" value="0.2" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/item_db.xml" value="0.1" />
         <entry key="..\:/Users/DTD/AndroidStudioProjects/EngKid/app/src/main/res/layout/vocabulary_list_item_layout.xml" value="0.18" />
