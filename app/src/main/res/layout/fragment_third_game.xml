@@ -8,13 +8,17 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/task_progress_bar" />
+        layout="@layout/task_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title_sentence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
+        android:fontFamily="@font/baloo_tamma"
         android:text="Dịch câu sau sang tiếng Việt"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,11 +30,12 @@
         android:id="@+id/eng_sentence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="192dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="I am a women"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include" />
 
@@ -55,6 +60,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+    <ImageButton
+        android:id="@+id/spkSlower"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="500dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/snail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintStart_toEndOf="@+id/eng_sentence" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
