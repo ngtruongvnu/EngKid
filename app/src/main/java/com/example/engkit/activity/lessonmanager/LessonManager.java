@@ -1,11 +1,9 @@
-package com.example.engkit.activity;
-
+package com.example.engkit.activity.lessonmanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import com.example.engkit.R;
 import com.example.engkit.fragment.question.lv1.Question1;
 import com.example.engkit.fragment.question.lv1.Question2;

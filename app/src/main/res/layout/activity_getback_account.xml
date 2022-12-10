@@ -63,7 +63,7 @@
             app:boxStrokeWidthFocused="2dp"
             app:helperText="Bắt buộc*"
             app:helperTextEnabled="true"
-            app:helperTextTextColor="@color/red">
+            app:helperTextTextColor="@color/error_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_gba_field"
@@ -99,7 +99,7 @@
             app:boxStrokeWidth="2dp"
             app:boxStrokeWidthFocused="2dp"
             app:helperText="Bắt buộc*"
-            app:helperTextTextColor="@color/red">
+            app:helperTextTextColor="@color/error_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/code_input_field"
@@ -125,7 +125,8 @@
             app:boxStrokeWidth="2dp"
             app:boxStrokeWidthFocused="2dp"
             app:helperText="Bắt buộc*"
-            app:helperTextTextColor="@color/red">
+            app:helperTextTextColor="@color/error_color">
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passw_input_field"
@@ -152,7 +153,7 @@
             app:boxStrokeWidth="2dp"
             app:boxStrokeWidthFocused="2dp"
             app:helperText="Bắt buộc*"
-            app:helperTextTextColor="@color/red">
+            app:helperTextTextColor="@color/error_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passw_again_input_field"
@@ -204,7 +205,6 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.276"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.32" />
 </androidx.constraintlayout.widget.ConstraintLayout>

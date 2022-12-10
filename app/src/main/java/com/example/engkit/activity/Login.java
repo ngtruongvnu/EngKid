@@ -112,7 +112,7 @@ public class Login extends AppCompatActivity {
     private void buildDatabase(){
         // tao bang
         //engkitHelperDB.queryData("DROP TABLE Account");
-        engkitHelperDB.queryData("CREATE TABLE IF NOT EXISTS Account (Id INTEGER PRIMARY KEY AUTOINCREMENT, Email varchar(30), Code varchar(10), Password varchar(30), Name varchar(30), Date date)");
+        engkitHelperDB.queryData("CREATE TABLE IF NOT EXISTS Account (Id INTEGER PRIMARY KEY AUTOINCREMENT, Email varchar(30), Code varchar(10), Password varchar(30), Name varchar(30), Date date, Address varchar(30), lesson int");
         // them du lieu
         //engkitHelperDB.queryData("INSERT INTO Account VALUES (null,'hoang@gmail.com','123456', 'Vu Duy Hoang','2022-01-24')");
 

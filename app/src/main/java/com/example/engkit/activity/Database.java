@@ -1,12 +1,10 @@
 package com.example.engkit.activity;
 
-import static java.time.LocalDate.parse;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.engkit.R;
 import com.example.engkit.adapter.UserAdapter;
@@ -14,6 +12,7 @@ import com.example.engkit.database.EngkitHelperDB;
 import com.example.engkit.database.User;
 
 import org.threeten.bp.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 

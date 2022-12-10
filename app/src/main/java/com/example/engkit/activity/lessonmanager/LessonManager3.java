@@ -1,14 +1,13 @@
-package com.example.engkit.activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.engkit.activity.lessonmanager;
 
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.engkit.R;
 import com.example.engkit.fragment.question.lv1.Question2;
 
-// cai activity nay se quan li 10 cau hoi cua cái khoá
-public class LessonManager2 extends AppCompatActivity {
+public class LessonManager3 extends AppCompatActivity {
 
     private Question2 question2;
     @Override

@@ -1,6 +1,8 @@
 package com.example.engkit.adapter;
 
 import android.content.Context;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +14,14 @@ import com.example.engkit.R;
 import com.example.engkit.entities.Vocabulary;
 
 import java.util.List;
+import java.util.Locale;
 
 public class VocabularyAdapter extends BaseAdapter {
 
     private List<Vocabulary> listVocabulary;
     private LayoutInflater layoutInflater;
     private Context context;
-
+    private TextToSpeech tts;
 
     public VocabularyAdapter(Context context, List<Vocabulary> listData) {
         this.listVocabulary = listData;
@@ -43,6 +46,7 @@ public class VocabularyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        createTTS();
         ViewHolder holder;
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.vocabulary_list_item_layout, null);
@@ -59,9 +63,28 @@ public class VocabularyAdapter extends BaseAdapter {
         Vocabulary vocabulary = this.listVocabulary.get(position);
         holder.vocabularyName.setText(vocabulary.getVocabularyName());
         holder.vocabularyMeaning.setText(vocabulary.getVocabularyMeaning());
-        holder.setOnClickPronunciationBtn();
+        holder.setOnClickPronunciationBtn(vocabulary.getVocabularyName());
         holder.setOnClickDetailBtn();
         return convertView;
+    }
+
+    private void createTTS() {
+        tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status == TextToSpeech.SUCCESS){
+                    int result = tts.setLanguage(Locale.US);
+                    if(result == TextToSpeech.LANG_MISSING_DATA ||
+                            result == TextToSpeech.LANG_NOT_SUPPORTED){
+                        Log.e("error", "This Language is not supported");
+                    } else {
+
+                    }
+                } else {
+                    Log.e("error", "Initilization Failed!");
+                }
+            }
+        });
     }
 
     private class ViewHolder {
@@ -70,11 +93,15 @@ public class VocabularyAdapter extends BaseAdapter {
         ImageView pronunciationBtn;
         TextView detailBtn;
 
-        public void setOnClickPronunciationBtn() {
+        public void setOnClickPronunciationBtn(final String text) {
             pronunciationBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    if(text == null||"".equals(text))
+                    {
+                        tts.speak("Content not available", TextToSpeech.QUEUE_FLUSH, null,"available");
+                    }else
+                        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, text);
                 }
             });
         }
@@ -83,13 +110,9 @@ public class VocabularyAdapter extends BaseAdapter {
             detailBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                 }
             });
         }
 
     }
 }
-
-
-

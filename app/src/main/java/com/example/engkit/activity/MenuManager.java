@@ -17,12 +17,13 @@ import com.example.engkit.fragment.function.Task;
 public class MenuManager extends AppCompatActivity {
 
     FragmentContainerView fragmentContainerView;
-    ImageButton homeButton,reviewButton,rankButton,taskButton,infoButton,imageButtonOld;
+    ImageButton homeButton, reviewButton, rankButton, taskButton, infoButton, imageButtonOld;
     private Home homeFragment;
     private Information infoFragment;
     private Task taskFragment;
     private ReviewVocabulary reviewVocabularyFragment;
     private Rank rankFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,29 +83,29 @@ public class MenuManager extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(homeButton!=imageButtonOld) {
+                if (homeButton != imageButtonOld) {
                     homeButton.setImageResource(R.drawable.house_icon_y);
                     processingClickButton();
                     imageButtonOld = homeButton;
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,homeFragment).commit();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager, homeFragment).commit();
                 }
             }
         });
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(infoButton!=imageButtonOld) {
+                if (infoButton != imageButtonOld) {
                     infoButton.setImageResource(R.drawable.avatar_icon_y);
                     processingClickButton();
                     imageButtonOld = infoButton;
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,infoFragment).commit();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager, infoFragment).commit();
                 }
             }
         });
         reviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(reviewButton!=imageButtonOld) {
+                if (reviewButton != imageButtonOld) {
                     reviewButton.setImageResource(R.drawable.dictionary_y);
                     processingClickButton();
                     imageButtonOld = reviewButton;
@@ -115,22 +116,22 @@ public class MenuManager extends AppCompatActivity {
         taskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(taskButton!=imageButtonOld) {
+                if (taskButton != imageButtonOld) {
                     taskButton.setImageResource(R.drawable.task_icon_y);
                     processingClickButton();
                     imageButtonOld = taskButton;
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,taskFragment).commit();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager, taskFragment).commit();
                 }
             }
         });
         rankButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(rankButton!=imageButtonOld) {
+                if (rankButton != imageButtonOld) {
                     rankButton.setImageResource(R.drawable.rank_icon_y);
                     processingClickButton();
                     imageButtonOld = rankButton;
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,rankFragment).commit();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager, rankFragment).commit();
                 }
             }
         });
@@ -138,22 +139,21 @@ public class MenuManager extends AppCompatActivity {
 
     private void processingClickButton() {
         if (imageButtonOld == null) return;
-        if(imageButtonOld==homeButton){
+        if (imageButtonOld == homeButton) {
             getSupportFragmentManager().beginTransaction().remove(homeFragment).commit();
             imageButtonOld.setImageResource(R.drawable.house_icon_n);
-        } else if (imageButtonOld==infoButton){
+        } else if (imageButtonOld == infoButton) {
             getSupportFragmentManager().beginTransaction().remove(infoFragment).commit();
             imageButtonOld.setImageResource(R.drawable.avatar_icon_n);
-        } else if (imageButtonOld==reviewButton) {
+        } else if (imageButtonOld == reviewButton) {
             getSupportFragmentManager().beginTransaction().remove(reviewVocabularyFragment).commit();
             imageButtonOld.setImageResource(R.drawable.dictionary_n);
-        } else if (imageButtonOld==taskButton) {
+        } else if (imageButtonOld == taskButton) {
             getSupportFragmentManager().beginTransaction().remove(taskFragment).commit();
             imageButtonOld.setImageResource(R.drawable.task_icon_n);
-        } else if (imageButtonOld==rankButton) {
+        } else if (imageButtonOld == rankButton) {
             getSupportFragmentManager().beginTransaction().remove(rankFragment).commit();
             imageButtonOld.setImageResource(R.drawable.rank_icon_n);
         }
     }
-
 }

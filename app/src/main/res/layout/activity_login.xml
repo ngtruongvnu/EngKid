@@ -103,7 +103,7 @@
             app:boxStrokeWidth="2dp"
             app:boxStrokeWidthFocused="2dp"
             app:helperText="Bắt buộc*"
-            app:helperTextTextColor="@color/red">
+            app:helperTextTextColor="@color/error_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_login_field"

@@ -1,14 +1,16 @@
 package com.example.engkit.activity;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.engkit.R;
 import com.example.engkit.database.EngkitHelperDB;
@@ -36,6 +38,7 @@ public class EditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         createVariable();
+        getEditProfileData();
         setOnClickSaveBtn();
         setOnClickChangeProfileImgBtn();
         setOnClickCancelBtn();
@@ -58,13 +61,58 @@ public class EditProfile extends AppCompatActivity {
         changeProfileImageBtn = findViewById(R.id.changeProfileImageBtn);
     }
 
+    public void getEditProfileData() {
+        try {
+            Cursor profileData = engkitHelperDB.GetData("SELECT Name, Email, Date, Address FROM Account ac WHERE ac.Email = '" + getResources().getString(R.string.userEmail) + "'");
+            if (profileData.moveToFirst()) {
+                do {
+                    editProfileName.setText(profileData.getString(0));
+                    editProfileEmail.setText(profileData.getString(1));
+
+                    editProfileDate.setText(convertDate(profileData.getString(2), false));
+                    editProfileAddress.setText(profileData.getString(3));
+                } while (profileData.moveToNext());
+            } else {
+                Toast.makeText(this, "data fetch failed", Toast.LENGTH_SHORT).show();
+            }
+            profileData.close();
+        } catch (Exception e) {
+            Toast.makeText(this, "data fetch failed", Toast.LENGTH_SHORT).show();
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private String convertDate(String date, boolean toDatabase) {
+        String[] regex = {"-", "/"};
+        if (toDatabase) {
+            regex[0] = "/";
+            regex[1] = "-";
+        }
+        String[] dateArray = date.split(regex[0]);
+        StringBuilder dateConvert = new StringBuilder(dateArray[dateArray.length - 1]);
+        for (int i = dateArray.length - 2; i >= 0; i--) {
+            dateConvert.append(regex[1] + dateArray[i]);
+        }
+        return dateConvert.toString();
+    }
+
+     private String convertDateToDatabase(String date) {
+            String[] dateArray = date.split("/");
+            StringBuilder dateConvert = new StringBuilder(dateArray[dateArray.length - 1]);
+            for (int i = dateArray.length - 2; i >= 0; i--) {
+                dateConvert.append("-" + dateArray[i]);
+            }
+            return dateConvert.toString();
+        }
+
+
     private void setOnClickSaveBtn() {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean isSave = true;
+                boolean isSave = false;
                 String userName = editProfileName.getText().toString();
-                String userDate = editProfileDate.getText().toString();
+                String userDate = convertDate(editProfileDate.getText().toString(), true);
                 String userAddress = editProfileAddress.getText().toString();
                 String userEmail = editProfileEmail.getText().toString();
 
@@ -72,17 +120,22 @@ public class EditProfile extends AppCompatActivity {
                     isSave = false;
                 }
 
-                editProfileEmailError.setVisibility(View.VISIBLE);
-                editProfileNameError.setVisibility(View.VISIBLE);
-                editProfileAddressError.setVisibility(View.VISIBLE);
-                editProfileDateError.setVisibility(View.VISIBLE);
+                if (!isSave) {
+                    return;
+                }
 
-//                engkitHelperDB.queryData("UPDATE Account as ac SET ac.name = '" + userName + "' ac.date = '" + userDate + "' ac.address = '" + userAddress + "'ac.email = '" + userEmail + "'");
+                try {
+                    engkitHelperDB.queryData("UPDATE Account SET Name = '" + userName + "', Date = '" + userDate + "', Address = '" + userAddress + "', Email = '" + userEmail + "' WHERE Email = '" + getResources().getString(R.string.userEmail) + "'");
+                    Toast.makeText(EditProfile.this, "Sửa hồ sơ thành công", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(EditProfile.this, "Sửa hồ sơ thất bại", Toast.LENGTH_SHORT).show();
+                    System.out.println(e.getMessage());
+                }
+
 //                Intent intent = new Intent(EditProfile.this, MenuManager.class);
 //                intent.putExtra("OPEN_FRAGMENT", "information");
 //                startActivity(intent);
-                Toast.makeText(EditProfile.this, "Sửa hồ sơ thành công", Toast.LENGTH_SHORT).show();
-//                finish();
+                finish();
             }
         });
     }
