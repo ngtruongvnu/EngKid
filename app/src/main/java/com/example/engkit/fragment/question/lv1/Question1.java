@@ -247,7 +247,6 @@ public class Question1 extends Fragment{
     int countBlue = 0;
     int countYellow = 0;
     public void setButtonPickedColor(Button button, int count) {
-
     }
 //    public void onClickbtn1() {
 //        btn1.setOnClickListener(new View.OnClickListener() {

@@ -1,17 +1,17 @@
 package com.example.engkit.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentContainerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentContainerView;
 
 import com.example.engkit.R;
 import com.example.engkit.fragment.function.Home;
 import com.example.engkit.fragment.function.Information;
 import com.example.engkit.fragment.function.Rank;
-import com.example.engkit.fragment.function.Review;
+import com.example.engkit.fragment.function.ReviewVocabulary;
 import com.example.engkit.fragment.function.Task;
 
 public class MenuManager extends AppCompatActivity {
@@ -21,7 +21,7 @@ public class MenuManager extends AppCompatActivity {
     private Home homeFragment;
     private Information infoFragment;
     private Task taskFragment;
-    private Review reviewFragment;
+    private ReviewVocabulary reviewVocabularyFragment;
     private Rank rankFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class MenuManager extends AppCompatActivity {
         infoFragment = new Information();
         rankFragment = new Rank();
         taskFragment = new Task();
-        reviewFragment = new Review();
+        reviewVocabularyFragment = new ReviewVocabulary();
     }
 
     public void clickButton() {
@@ -75,10 +75,10 @@ public class MenuManager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(reviewButton!=imageButtonOld) {
-                    reviewButton.setImageResource(R.drawable.review_icon_y);
+                    reviewButton.setImageResource(R.drawable.dictionary_y);
                     processingClickButton(imageButtonOld);
                     imageButtonOld = reviewButton;
-                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,reviewFragment).commit();
+                    getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager, reviewVocabularyFragment).commit();
                 }
             }
         });
@@ -114,8 +114,8 @@ public class MenuManager extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().remove(infoFragment).commit();
             imageButtonOld.setImageResource(R.drawable.avatar_icon_n);
         } else if (imageButtonOld==reviewButton) {
-            getSupportFragmentManager().beginTransaction().remove(reviewFragment).commit();
-            imageButtonOld.setImageResource(R.drawable.review_icon_n);
+            getSupportFragmentManager().beginTransaction().remove(reviewVocabularyFragment).commit();
+            imageButtonOld.setImageResource(R.drawable.dictionary_n);
         } else if (imageButtonOld==taskButton) {
             getSupportFragmentManager().beginTransaction().remove(taskFragment).commit();
             imageButtonOld.setImageResource(R.drawable.task_icon_n);

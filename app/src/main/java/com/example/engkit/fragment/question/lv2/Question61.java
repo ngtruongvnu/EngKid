@@ -2,9 +2,7 @@ package com.example.engkit.fragment.question.lv2;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,16 +12,18 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.engkit.R;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 /**
@@ -42,7 +42,9 @@ public class Question61 extends Fragment {
     LinearLayout wordSet;
     LinearLayout userAns;
     ImageButton speakSlower;
+    Button checkOrder;
     private HashMap engToVie;
+    TextToSpeech tts;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -109,10 +111,12 @@ public class Question61 extends Fragment {
         wordSet = rootView.findViewById(R.id.wordSet);
         userAns = rootView.findViewById(R.id.user_awswer);
         speakSlower = rootView.findViewById(R.id.spkSlower);
+        checkOrder = rootView.findViewById(R.id.checkOrder);
         engToVie = keyAndValue();
         String english = randomSentence();
 //        Log.d(s,s);
         ArrayList separate = separateSentence(english);
+        ArrayList vieSentence = vieSentence(english);
         int size = separate.size()-1;
         for(Object o:separate) {
             Button button = new Button(this.getContext());
@@ -122,30 +126,52 @@ public class Question61 extends Fragment {
             wordSet.addView(button);
 //            buttonList.add(button);
         }
-//        Button button = new Button(this.getContext());
-//        button.setText("hehe");
-//        button.setTag((Integer) 0);
-//        wordSet.addView(button);
-//        wordSet.removeView(rootView.findViewWithTag((Integer) 0));
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                wordSet.removeView(rootView.findViewWithTag((Integer)0));
-//            }
-//        });
-//        wordSet.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(v.getTag().equals(0)) {
-//                    wordSet.removeView(button);
-//                }
-//            }
-//        });
-//        while(wordSet.getChildCount() == 0) {
+
         for(int i = 0; i < wordSet.getChildCount(); i++) {
             onClickEachButton((Button) wordSet.getChildAt(i));
         }
-
+        checkOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkUserOrder(orderUser(), vieSentence)) {
+                    checkOrder.setText("True");
+                } else {
+                    userAns.removeAllViews();
+                    for(Object o:separate) {
+                        Button button = new Button(getContext());
+//                        button.setTag((Integer) size);
+//                        size--;
+                        button.setText(o.toString());
+                        wordSet.addView(button);
+//            buttonList.add(button);
+                    }
+                    for(int i = 0; i < wordSet.getChildCount(); i++) {
+                        onClickEachButton((Button) wordSet.getChildAt(i));
+                    }
+                }
+            }
+        });
+        tts = new TextToSpeech(this.getContext(), status -> {
+            // TODO Auto-generated method stub
+            if(status == TextToSpeech.SUCCESS){
+                int result=tts.setLanguage(Locale.US);
+                if(result==TextToSpeech.LANG_MISSING_DATA ||
+                        result==TextToSpeech.LANG_NOT_SUPPORTED){
+                    Log.e("error", "This Language is not supported");
+                }
+                else{
+                    ConvertTextToSpeech();
+                }
+            }
+            else
+                Log.e("error", "Initilization Failed!");
+        });
+        speakSlower.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConvertTextToSpeech();
+            }
+        });
         return rootView;
     }
 
@@ -159,6 +185,36 @@ public class Question61 extends Fragment {
         });
     }
 
+    public ArrayList orderUser() {
+        ArrayList<String> orders = new ArrayList<>();
+        int userSize = userAns.getChildCount();
+        for(int i = 0 ; i < userSize; i++) {
+            Button btn =(Button) userAns.getChildAt(i);
+            orders.add((String) btn.getText());
+        }
+        return orders;
+    }
+
+    public boolean checkUserOrder(ArrayList order, ArrayList vieSentence) {
+        if(order.equals(vieSentence)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public ArrayList vieSentence(String key) {
+//        key = "I am a women";
+        String vieSentence = (String) engToVie.get((String) key);
+        String afterSplit[] = vieSentence.split(" ");
+        ArrayList vietWord = new ArrayList<>();
+        for(String s:afterSplit) {
+            vietWord.add((String) s);
+            Log.d(s, s);
+        }
+        return vietWord;
+    }
 
     public ArrayList separateSentence(String key) {
 //        key = "I am a women";
@@ -181,5 +237,32 @@ public class Question61 extends Fragment {
         engSentence.setText((String) sentences.get(numRan));
         Log.d((String) sentences.get(numRan), (String) sentences.get(numRan));
         return (String) engSentence.getText();
+    }
+
+    private void ConvertTextToSpeech() {
+        // TODO Auto-generated method stub
+        String text = (String) engSentence.getText();
+        if(null == text)
+        {
+            text = "Content not available";
+            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        }else
+            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    public void onClick(View view) {
+        ConvertTextToSpeech();
+    }
+
+    @Override
+    public void onPause() {
+        // TODO Auto-generated method stub
+
+        if(tts != null){
+
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onPause();
     }
 }
