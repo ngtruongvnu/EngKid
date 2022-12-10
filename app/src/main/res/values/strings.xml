@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">EngKit</string>
+    <string name="quen_mk"><u>QuÃªn máº­t kháº©u</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_profile_name_error_message">Tên sai đinh dạng</string>
+    <string name="edit_profile_date_error_message">Ngày sinh không đúng</string>
+    <string name="edit_profile_address_error_message">Địa chỉ không đúng</string>
+    <string name="edit_profile_email_error_message">Email không đúng</string>
     <string name="rank">Xếp hạng</string>
     <string name="listUserRanking">Danh sách điểm người dùng từ cao xuống thấp</string>
     <string name="appSymbol">app symbol</string>

@@ -2,19 +2,19 @@ package com.example.engkit.fragment.function;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.engkit.R;
-import com.example.engkit.activity.LessonManager;
-import com.example.engkit.activity.LessonManager2;
 import com.example.engkit.activity.Shop;
+import com.example.engkit.activity.lessonmanager.LessonManager;
+import com.example.engkit.activity.lessonmanager.LessonManager3;
+import com.example.engkit.activity.lessonmanager.LessonManager4;
+import com.example.engkit.activity.lessonmanager.LessonManager5;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,7 +33,7 @@ public class Home extends Fragment {
     private String mParam2;
 
     private ImageButton shop;
-    private ImageButton lesson1,lesson2,lesson3;
+    private ImageButton lesson1,lesson2,lesson3,lesson4,lesson5;
 
     public Home() {
         // Required empty public constructor
@@ -69,7 +69,9 @@ public class Home extends Fragment {
     private void createVariable(View view){
         lesson1 = view.findViewById(R.id.starBtn);
         lesson2 = view.findViewById(R.id.lock1Btn);
-        lesson3 = view.findViewById(R.id.lock2Btn);
+        lesson3 = view.findViewById(R.id.treasureBtn);
+        lesson4 = view.findViewById(R.id.bookBtn);
+        lesson5 = view.findViewById(R.id.trophyBtn);
         shop = view.findViewById(R.id.shop);
     }
 
@@ -82,6 +84,8 @@ public class Home extends Fragment {
         pickLesson1();
         pickLesson2();
         pickLesson3();
+        pickLesson4();
+        pickLesson5();
         pickShop();
         return view;
     }
@@ -122,7 +126,37 @@ public class Home extends Fragment {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(getActivity(), LessonManager2.class);
+                Intent intent = new Intent(getActivity(), LessonManager3.class);
+                Bundle bundle = new Bundle();
+                //bundle.putString("2", "L2");
+                intent.putExtras(bundle);
+                getActivity().startActivity(intent);
+            }
+        });
+    }
+
+    public void pickLesson4(){
+        lesson4.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), LessonManager4.class);
+                Bundle bundle = new Bundle();
+                //bundle.putString("2", "L2");
+                intent.putExtras(bundle);
+                getActivity().startActivity(intent);
+            }
+        });
+    }
+
+    public void pickLesson5(){
+        lesson5.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), LessonManager5.class);
                 Bundle bundle = new Bundle();
                 //bundle.putString("2", "L2");
                 intent.putExtras(bundle);

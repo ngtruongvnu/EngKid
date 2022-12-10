@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:fontFamily="@font/baloo_tamma"
+        android:fontFamily="@font/baloo_bhaijaan"
         android:text="Dịch câu sau sang tiếng Việt"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="192dp"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:fontFamily="@font/baloo_tamma_2_semibold"
         android:text="I am a women"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
         android:id="@+id/user_awswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="220dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,6 +74,16 @@
         app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toEndOf="@+id/eng_sentence" />
 
+    <Button
+        android:id="@+id/checkOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:text="Check order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

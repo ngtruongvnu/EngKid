@@ -16,7 +16,7 @@
         android:theme="@style/Theme.EngKit"
         tools:targetApi="31">
         <activity
-            android:name=".activity.LessonManager2"
+            android:name=".activity.lessonmanager.LessonManager2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -26,7 +26,28 @@
             android:name=".activity.Shop"
             android:exported="false" />
         <activity
-            android:name=".activity.LessonManager"
+            android:name=".activity.lessonmanager.LessonManager"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lessonmanager.LessonManager3"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lessonmanager.LessonManager4"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lessonmanager.LessonManager5"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Database"
+            android:exported="false" />
+        <activity
+            android:name=".activity.GetAccountBack"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignIn"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Login"
             android:exported="false" />
         <activity
             android:name=".activity.MenuManager"

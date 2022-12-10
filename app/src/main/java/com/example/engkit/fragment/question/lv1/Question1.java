@@ -1,20 +1,15 @@
 package com.example.engkit.fragment.question.lv1;
 
-import static android.graphics.Color.GREEN;
-
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.engkit.R;
 
@@ -25,8 +20,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
-import java.util.Stack;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,21 +72,6 @@ public class Question1 extends Fragment{
 //        btn1.setOnClickListener(this);
     }
 
-
-
-//    public ArrayList<Pair<String, String>> pairWord(InputStream inputStream) throws Exception {
-//        ArrayList<Pair<String,String>> pairArrayList = new ArrayList<>();
-//        inputStream = getResources().openRawResource(R.raw.tappair);
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//        String eachLine;
-//        while ((eachLine = bufferedReader.readLine()) != null){
-//            String[] separate;
-//            separate = eachLine.split(":", 2);
-//            Pair<String,String> pair = new Pair<>(separate[0], separate[1]);
-//            pairArrayList.add(pair);
-//        }
-//        return pairArrayList;
-//    }
 
 
     private HashMap keyAndValue;
@@ -247,7 +225,6 @@ public class Question1 extends Fragment{
     int countBlue = 0;
     int countYellow = 0;
     public void setButtonPickedColor(Button button, int count) {
-
     }
 //    public void onClickbtn1() {
 //        btn1.setOnClickListener(new View.OnClickListener() {
