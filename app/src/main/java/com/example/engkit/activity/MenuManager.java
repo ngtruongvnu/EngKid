@@ -30,12 +30,42 @@ public class MenuManager extends AppCompatActivity {
         createVariable();
         clickButton();
         getSupportFragmentManager().executePendingTransactions();
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,homeFragment).commit();
+        openFragment();
     }
 
-    private void createVariable(){
+    private void openFragment() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            try {
+                switch (extras.getString("OPEN_FRAGMENT")) {
+                    case "home":
+                        homeButton.callOnClick();
+                        break;
+                    case "information":
+                        infoButton.callOnClick();
+                        break;
+                    case "rank":
+                        rankButton.callOnClick();
+                        break;
+                    case "reviewVocabulary":
+                        reviewButton.callOnClick();
+                        break;
+                    case "task":
+                        taskButton.callOnClick();
+                        break;
+                }
+            } catch (NullPointerException e) {
+                homeButton.callOnClick();
+            }
+        } else {
+            homeButton.callOnClick();
+//        }
+        }
+    }
+
+    private void createVariable() {
         fragmentContainerView = findViewById(R.id.fragment_container_manager);
-        imageButtonOld = findViewById(R.id.home_bt);
+        imageButtonOld = null;
         homeButton = findViewById(R.id.home_bt);
         infoButton = findViewById(R.id.info_bt);
         taskButton = findViewById(R.id.task_bt);
@@ -54,7 +84,7 @@ public class MenuManager extends AppCompatActivity {
             public void onClick(View v) {
                 if(homeButton!=imageButtonOld) {
                     homeButton.setImageResource(R.drawable.house_icon_y);
-                    processingClickButton(imageButtonOld);
+                    processingClickButton();
                     imageButtonOld = homeButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,homeFragment).commit();
                 }
@@ -65,7 +95,7 @@ public class MenuManager extends AppCompatActivity {
             public void onClick(View v) {
                 if(infoButton!=imageButtonOld) {
                     infoButton.setImageResource(R.drawable.avatar_icon_y);
-                    processingClickButton(imageButtonOld);
+                    processingClickButton();
                     imageButtonOld = infoButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,infoFragment).commit();
                 }
@@ -76,7 +106,7 @@ public class MenuManager extends AppCompatActivity {
             public void onClick(View v) {
                 if(reviewButton!=imageButtonOld) {
                     reviewButton.setImageResource(R.drawable.dictionary_y);
-                    processingClickButton(imageButtonOld);
+                    processingClickButton();
                     imageButtonOld = reviewButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager, reviewVocabularyFragment).commit();
                 }
@@ -87,7 +117,7 @@ public class MenuManager extends AppCompatActivity {
             public void onClick(View v) {
                 if(taskButton!=imageButtonOld) {
                     taskButton.setImageResource(R.drawable.task_icon_y);
-                    processingClickButton(imageButtonOld);
+                    processingClickButton();
                     imageButtonOld = taskButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,taskFragment).commit();
                 }
@@ -98,7 +128,7 @@ public class MenuManager extends AppCompatActivity {
             public void onClick(View v) {
                 if(rankButton!=imageButtonOld) {
                     rankButton.setImageResource(R.drawable.rank_icon_y);
-                    processingClickButton(imageButtonOld);
+                    processingClickButton();
                     imageButtonOld = rankButton;
                     getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_manager,rankFragment).commit();
                 }
@@ -106,7 +136,8 @@ public class MenuManager extends AppCompatActivity {
         });
     }
 
-    private void processingClickButton(ImageButton imageButtonOld){
+    private void processingClickButton() {
+        if (imageButtonOld == null) return;
         if(imageButtonOld==homeButton){
             getSupportFragmentManager().beginTransaction().remove(homeFragment).commit();
             imageButtonOld.setImageResource(R.drawable.house_icon_n);

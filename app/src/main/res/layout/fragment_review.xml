@@ -37,10 +37,13 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listVocabulary"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/listVocabulary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
 
->>>>>>> hoang_dev
 </LinearLayout>

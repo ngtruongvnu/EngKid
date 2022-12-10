@@ -258,6 +258,7 @@
     </TableLayout>
 
     <Button
+        android:id="@+id/forgotPasswordBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ĐỔI MẬT KHẨU"
@@ -266,6 +267,7 @@
         android:layout_marginTop="30dp"/>
 
     <Button
+        android:id="@+id/editProfileBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -274,6 +276,7 @@
         android:textColor="@color/primary_color" />
 
     <Button
+        android:id="@+id/logoutBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ĐĂNG XUẤT"

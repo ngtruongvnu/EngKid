@@ -1,4 +1,4 @@
-package com.example.engkit.fragment.vocabulary;
+package com.example.engkit.entities;
 
 public class Vocabulary {
     public String vocabularyName;
