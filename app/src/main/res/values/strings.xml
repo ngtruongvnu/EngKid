@@ -7,4 +7,8 @@
     <string name="edit_profile_date_error_message">Ngày sinh không đúng</string>
     <string name="edit_profile_address_error_message">Địa chỉ không đúng</string>
     <string name="edit_profile_email_error_message">Email không đúng</string>
+    <string name="rank">Xếp hạng</string>
+    <string name="listUserRanking">Danh sách điểm người dùng từ cao xuống thấp</string>
+    <string name="appSymbol">app symbol</string>
+    <string name="shop">Shop</string>
 </resources>
