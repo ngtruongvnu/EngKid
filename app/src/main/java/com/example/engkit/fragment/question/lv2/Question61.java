@@ -1,6 +1,7 @@
 package com.example.engkit.fragment.question.lv2;
 
 import android.annotation.SuppressLint;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -45,6 +46,7 @@ public class Question61 extends Fragment {
     Button checkOrder;
     private HashMap engToVie;
     TextToSpeech tts;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -134,8 +136,12 @@ public class Question61 extends Fragment {
             @Override
             public void onClick(View v) {
                 if(checkUserOrder(orderUser(), vieSentence)) {
+                    MediaPlayer ting = MediaPlayer.create(getContext(), R.raw.ting);
+                    ting.start();
                     checkOrder.setText("True");
                 } else {
+                    MediaPlayer unting = MediaPlayer.create(getContext(), R.raw.unting);
+                    unting.start();
                     userAns.removeAllViews();
                     for(Object o:separate) {
                         Button button = new Button(getContext());

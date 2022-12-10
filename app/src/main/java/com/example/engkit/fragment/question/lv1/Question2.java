@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.UriMatcher;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -81,6 +83,7 @@ public class Question2 extends Fragment {
     public Question2() {
         // Required empty public constructor
     }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -152,7 +155,7 @@ public class Question2 extends Fragment {
     }
 
     TextToSpeech tts;
-    TextView textView;
+    Button checkLess2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -165,7 +168,7 @@ public class Question2 extends Fragment {
         imgBtn2 = rootView.findViewById(R.id.imgBtn2);
         imgBtn3 = rootView.findViewById(R.id.imgBtn3);
         imgBtn4 = rootView.findViewById(R.id.imgBtn4);
-        textView = rootView.findViewById(R.id.textest);
+        checkLess2 = rootView.findViewById(R.id.checkLess2);
         wordAndUrl = fileToMap();
 //        ArrayList words = new ArrayList<String>(wordAndUrl.keySet());
 //        wordAndUrl = keyAndValue();
@@ -182,22 +185,42 @@ public class Question2 extends Fragment {
 //        v.getTag().toString() == wordAndUrl.get((String) word).toString()
         imgBtn1.setOnClickListener(v -> {
             if(v.getTag().equals(wordAndUrl.get(word))) {
-                textView.setText("True");
+                MediaPlayer ting = MediaPlayer.create(getContext(), R.raw.ting);
+                ting.start();
+                checkLess2.setText("True");
+            } else {
+                MediaPlayer unting = MediaPlayer.create(getContext(), R.raw.unting);
+                unting.start();
             }
         });
         imgBtn2.setOnClickListener(v -> {
             if(v.getTag().equals(wordAndUrl.get(word))) {
-                textView.setText("True");
+                MediaPlayer ting = MediaPlayer.create(getContext(), R.raw.ting);
+                ting.start();
+                checkLess2.setText("True");
+            } else {
+                MediaPlayer unting = MediaPlayer.create(getContext(), R.raw.unting);
+                unting.start();
             }
         });
         imgBtn3.setOnClickListener(v -> {
             if(v.getTag().equals(wordAndUrl.get(word))) {
-                textView.setText("True");
+                MediaPlayer ting = MediaPlayer.create(getContext(), R.raw.ting);
+                ting.start();
+                checkLess2.setText("True");
+            } else {
+                MediaPlayer unting = MediaPlayer.create(getContext(), R.raw.unting);
+                unting.start();
             }
         });
         imgBtn4.setOnClickListener(v -> {
             if(v.getTag().equals(wordAndUrl.get(word))) {
-                textView.setText("True");
+                MediaPlayer ting = MediaPlayer.create(getContext(), R.raw.ting);
+                ting.start();
+                checkLess2.setText("True");
+            } else {
+                MediaPlayer unting = MediaPlayer.create(getContext(), R.raw.unting);
+                unting.start();
             }
         });
         tts = new TextToSpeech(this.getContext(), status -> {
