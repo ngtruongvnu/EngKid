@@ -127,4 +127,5 @@
         android:scaleType="fitCenter"
         android:src="@drawable/trophy1"
         android:background="@android:color/transparent"/>
+
 </FrameLayout>

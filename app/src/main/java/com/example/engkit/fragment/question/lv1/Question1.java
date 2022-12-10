@@ -1,20 +1,15 @@
 package com.example.engkit.fragment.question.lv1;
 
-import static android.graphics.Color.GREEN;
-
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.engkit.R;
 
@@ -25,8 +20,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
-import java.util.Stack;
 
 /**
  * A simple {@link Fragment} subclass.

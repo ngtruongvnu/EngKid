@@ -26,6 +26,15 @@
         <activity
             android:name=".activity.LessonManager"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".activity.MenuManager"-->
+<!--            android:exported="false"/>-->
+        <activity
+            android:name=".activity.GetAccountBack"
+            android:exported="false"/>
+<!--        <activity-->
+<!--            android:name=".activity.Login"-->
+<!--            android:exported="false"/>-->
         <activity
             android:name=".activity.MenuManager"
             android:exported="true">
@@ -40,4 +49,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

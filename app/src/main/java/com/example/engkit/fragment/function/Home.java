@@ -2,16 +2,16 @@ package com.example.engkit.fragment.function;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.engkit.R;
 import com.example.engkit.activity.LessonManager;
+import com.example.engkit.activity.LessonManager2;
 import com.example.engkit.activity.Shop;
 
 /**
@@ -31,7 +31,7 @@ public class Home extends Fragment {
     private String mParam2;
 
     private ImageButton shop;
-    private ImageButton lesson1,lesson2;
+    private ImageButton lesson1,lesson2,lesson3;
 
     public Home() {
         // Required empty public constructor
@@ -67,6 +67,7 @@ public class Home extends Fragment {
     private void createVariable(View view){
         lesson1 = view.findViewById(R.id.starBtn);
         lesson2 = view.findViewById(R.id.lock1Btn);
+        lesson3 = view.findViewById(R.id.lock2Btn);
         shop = view.findViewById(R.id.shop);
     }
 
@@ -78,6 +79,7 @@ public class Home extends Fragment {
         createVariable(view);
         pickLesson1();
         pickLesson2();
+        pickLesson3();
         pickShop();
         return view;
     }
@@ -106,6 +108,21 @@ public class Home extends Fragment {
                 Intent intent = new Intent(getActivity(), LessonManager.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("2", "L2");
+                intent.putExtras(bundle);
+                getActivity().startActivity(intent);
+            }
+        });
+    }
+
+    public void pickLesson3(){
+        lesson3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), LessonManager2.class);
+                Bundle bundle = new Bundle();
+                //bundle.putString("2", "L2");
                 intent.putExtras(bundle);
                 getActivity().startActivity(intent);
             }
