@@ -1,9 +1,14 @@
 package com.example.engkit.activity;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,22 +20,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.engkit.R;
 import com.example.engkit.database.EngkitHelperDB;
 
+import java.net.URI;
 import java.net.URL;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EditProfile extends AppCompatActivity {
 
+    private final int GALLERY_REQ_CODE = 1000;
+
     private CircleImageView profileImage;
     private Button saveBtn, cancelBtn;
     private EditText editProfileName, editProfileDate, editProfileAddress, editProfileEmail;
     private TextView editProfileNameError, editProfileDateError, editProfileAddressError, editProfileEmailError;
     private TextView changeProfileImageBtn;
+    private String imageURI;
 
     private EngkitHelperDB engkitHelperDB;
 
     private URL imageURL;
     private String myURL = "";
+
+    SharedPreferences sharedPref;
 
 
     @Override
@@ -46,6 +57,8 @@ public class EditProfile extends AppCompatActivity {
     }
 
     private void createVariable() {
+        imageURI = "none";
+        sharedPref = this.getSharedPreferences("MyPreferences", this.MODE_PRIVATE);
         engkitHelperDB = new EngkitHelperDB(this,"EngkitDB.sqlite",null,1);
         profileImage = findViewById(R.id.profileImage);
         saveBtn = findViewById(R.id.saveBtn);
@@ -63,7 +76,9 @@ public class EditProfile extends AppCompatActivity {
 
     public void getEditProfileData() {
         try {
-            Cursor profileData = engkitHelperDB.GetData("SELECT Name, Email, Date, Address FROM Account ac WHERE ac.Email = '" + getResources().getString(R.string.userEmail) + "'");
+            String email = sharedPref.getString("email", "");
+            Log.e("edit ",  email);
+            Cursor profileData = engkitHelperDB.GetData("SELECT Name, Email, Date, Address, imageUri FROM Account ac WHERE ac.Email = '" + email + "'");
             if (profileData.moveToFirst()) {
                 do {
                     editProfileName.setText(profileData.getString(0));
@@ -71,6 +86,12 @@ public class EditProfile extends AppCompatActivity {
 
                     editProfileDate.setText(convertDate(profileData.getString(2), false));
                     editProfileAddress.setText(profileData.getString(3));
+
+//                    set image
+//                    if (profileData.getString(4) != "none") {
+//                        imageURI = profileData.getString(4);
+//                        profileImage.setImageURI(Uri.parse(imageURI));
+//                    }
                 } while (profileData.moveToNext());
             } else {
                 Toast.makeText(this, "data fetch failed", Toast.LENGTH_SHORT).show();
@@ -125,7 +146,11 @@ public class EditProfile extends AppCompatActivity {
                 }
 
                 try {
-                    engkitHelperDB.queryData("UPDATE Account SET Name = '" + userName + "', Date = '" + userDate + "', Address = '" + userAddress + "', Email = '" + userEmail + "' WHERE Email = '" + getResources().getString(R.string.userEmail) + "'");
+                    String email = sharedPref.getString("email", "");
+                    engkitHelperDB.queryData("UPDATE Account SET Name = '" + userName + "', Date = '" + userDate + "', Address = '" + userAddress + "', Email = '" + userEmail + "', imageUri = '" + imageURI + "' WHERE Email = '" + email + "'");
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("email", userEmail);
+                    editor.commit();
                     Toast.makeText(EditProfile.this, "Sửa hồ sơ thành công", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     Toast.makeText(EditProfile.this, "Sửa hồ sơ thất bại", Toast.LENGTH_SHORT).show();
@@ -153,9 +178,22 @@ public class EditProfile extends AppCompatActivity {
         changeProfileImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent iGallery = new Intent(Intent.ACTION_PICK);
+                iGallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(iGallery, GALLERY_REQ_CODE);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == GALLERY_REQ_CODE) {
+                profileImage.setImageURI(data.getData());
+                imageURI = data.getData().toString();
+            }
+        }
     }
 
     private void removeErrorMesssage() {

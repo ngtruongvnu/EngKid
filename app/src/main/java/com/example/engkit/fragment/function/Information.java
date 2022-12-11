@@ -1,12 +1,15 @@
 package com.example.engkit.fragment.function;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +24,17 @@ import com.example.engkit.activity.Login;
 import com.example.engkit.activity.MenuManager;
 import com.example.engkit.database.EngkitHelperDB;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Information extends Fragment {
 
     private EngkitHelperDB engkitHelperDB;
     private TextView profileLanguage, profileScore, profileAddress, profileEmail, profileDate, profileName, joinDate;
     private TextView profileNumLesson, profileTotalLesson;
-
+    private CircleImageView profileImage;
     private Button forgotPasswordBtn, editProfileBtn, logoutBtn;
+
+    SharedPreferences sharedPref;
 
     public Information() {
 
@@ -63,8 +70,15 @@ public class Information extends Fragment {
 
     public void createVariable(View view) {
         engkitHelperDB = new EngkitHelperDB(getActivity(),"EngkitDB.sqlite",null,1);
-        engkitHelperDB.queryData("CREATE TABLE IF NOT EXISTS Account (Id int PRIMARY KEY AUTOINCREMENT, Email varchar(30), Code varchar(10), Password varchar(30), Name varchar(30), Date date, Address varchar(30), lesson int)");
-        engkitHelperDB.queryData("INSERT INTO Account VALUES (null, 'hoang@gmail.com', '2507', '123456', 'Lương Thế Hùng', '2002-01-24', 'Hà nội', 10)");
+        sharedPref = getActivity().getSharedPreferences("MyPreferences", getActivity().MODE_PRIVATE);
+        engkitHelperDB.queryData("CREATE TABLE IF NOT EXISTS Account (Id INTEGER PRIMARY KEY AUTOINCREMENT, Email varchar(30), Code varchar(10), Password varchar(30), Name varchar(30), Date date, Address varchar(30), lesson int, imageUri varchar(100));");
+        if (sharedPref.getString("email", "") == "") {
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("email", "hung@gmail.com");
+            editor.commit();
+            engkitHelperDB.queryData("INSERT INTO Account VALUES (null, '" + sharedPref.getString("email", "") + "', '2507', '123456', 'Lương Thế Hùng', '2002-01-24', 'Hà nội', 10, 'none')");
+        }
+        profileImage = view.findViewById(R.id.profileImage);
         profileLanguage = view.findViewById(R.id.profileLanguage);
         profileScore = view.findViewById(R.id.profileScore);
         profileAddress = view.findViewById(R.id.profileAddress);
@@ -81,15 +95,18 @@ public class Information extends Fragment {
 
     public void getProfileData() {
         try {
-            Cursor profileData = engkitHelperDB.GetData("SELECT Name, Email, Date, Address, lesson FROM Account ac WHERE ac.Email = '" + getResources().getString(R.string.userEmail) + "'");
+            String email = sharedPref.getString("email", "");
+            Cursor profileData = engkitHelperDB.GetData("SELECT Name, Email, Date, Address, lesson, imageUri FROM Account ac WHERE ac.Email = '" + email + "'");
             if (profileData.moveToFirst()) {
                 do {
                     profileName.setText(profileData.getString(0));
                     profileEmail.setText(profileData.getString(1));
-
                     profileDate.setText(convertDate(profileData.getString(2)));
                     profileAddress.setText(profileData.getString(3));
                     profileNumLesson.setText(profileData.getString(4));
+//                    if (profileData.getString(5) != "none") {
+//                        profileImage.setImageURI(Uri.parse(profileData.getString(5)));
+//                    }
                 } while (profileData.moveToNext());
             } else {
                 Toast.makeText(getActivity(), "data fetch failed", Toast.LENGTH_SHORT).show();

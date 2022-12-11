@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.function.Rank">
 
-    <!-- TODO: Update blank fragment layout -->
-    <!-- TODO: Mọi người code fragment của mình ở đây -->
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="268dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="202dp"
+            android:layout_height="189dp"
+            android:contentDescription="@string/appSymbol"
+            android:src="@drawable/app_symbol"
+            android:translationX="204dp"
+            android:translationY="60dp" />
+
+        <TextView
+            android:id="@+id/ranking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rank"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:translationX="68dp"
+            android:translationY="180dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#3FAD35"
+            android:translationY="264dp"></FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ListView
+        android:id="@+id/listUser"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Tuấn"
-        android:textSize="24dp"
-        android:textColor="@color/black"
-        android:gravity="center"/>
-
->>>>>>> hoang_dev
+        android:translationY="268dp"
+        android:layout_marginBottom="260dp"/>
 </FrameLayout>
