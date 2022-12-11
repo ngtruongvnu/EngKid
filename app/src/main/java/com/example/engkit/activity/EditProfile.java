@@ -110,7 +110,7 @@ public class EditProfile extends AppCompatActivity {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean isSave = false;
+                boolean isSave = true;
                 String userName = editProfileName.getText().toString();
                 String userDate = convertDate(editProfileDate.getText().toString(), true);
                 String userAddress = editProfileAddress.getText().toString();

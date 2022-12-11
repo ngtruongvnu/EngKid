@@ -23,10 +23,11 @@ public class VocabularyAdapter extends BaseAdapter {
     private Context context;
     private TextToSpeech tts;
 
-    public VocabularyAdapter(Context context, List<Vocabulary> listData) {
+    public VocabularyAdapter(Context context, List<Vocabulary> listData, TextToSpeech tts) {
         this.listVocabulary = listData;
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
+        this.tts = tts;
     }
 
     @Override
@@ -46,7 +47,6 @@ public class VocabularyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        createTTS();
         ViewHolder holder;
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.vocabulary_list_item_layout, null);
@@ -68,24 +68,7 @@ public class VocabularyAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private void createTTS() {
-        tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS){
-                    int result = tts.setLanguage(Locale.US);
-                    if(result == TextToSpeech.LANG_MISSING_DATA ||
-                            result == TextToSpeech.LANG_NOT_SUPPORTED){
-                        Log.e("error", "This Language is not supported");
-                    } else {
 
-                    }
-                } else {
-                    Log.e("error", "Initilization Failed!");
-                }
-            }
-        });
-    }
 
     private class ViewHolder {
         TextView vocabularyName;
@@ -100,7 +83,7 @@ public class VocabularyAdapter extends BaseAdapter {
                     if(text == null||"".equals(text))
                     {
                         tts.speak("Content not available", TextToSpeech.QUEUE_FLUSH, null,"available");
-                    }else
+                    } else
                         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, text);
                 }
             });
